@@ -4,7 +4,13 @@
     {
       "assemblyPath": "<path to your dotnet core entrypoint>.dll",
       "workDirectory": "blank or path to your work directory",
-      "parameter": "parameters"
+      "parameter": "parameters",
+      "environmentVariables": [
+        {
+          "Key": "name",
+          "Value": "value"
+        }
+      ]
     }
   ]
 }

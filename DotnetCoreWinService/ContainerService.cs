@@ -98,6 +98,7 @@ namespace DotnetCoreWinService
                 }
                 psi.UseShellExecute = false;
                 psi.RedirectStandardOutput = true;
+                cfg.EnvironmentVariables?.ForEach(ev => psi.EnvironmentVariables.Add(ev.Key, ev.Value));
                 dotnetProcess.StartInfo = psi;
                 if (!dotnetProcess.Start())
                 {
@@ -115,8 +116,8 @@ namespace DotnetCoreWinService
         {
             processes.ForEach(process =>
             {
-                process.Kill();
-                process.Dispose();
+                process?.Kill();
+                process?.Dispose();
             });
         }
     }
