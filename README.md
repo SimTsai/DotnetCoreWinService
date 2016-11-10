@@ -16,7 +16,13 @@ sc create <serviceName> binPath= <path for this container>
     {
       "assemblyPath": "<path to your dotnet core entrypoint>.dll",
       "workDirectory": "blank or path to your work directory",
-      "parameter": "parameters"
+      "parameter": "parameters",
+      "environmentVariables": [
+        {
+          "Key": "environment variable name",
+          "Value": "environment variable value"
+        }
+      ]
     }
   ]
 }
